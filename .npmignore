@@ -8,6 +8,7 @@ coverage/
 # Dotfiles
 .env
 .vscode/
+.idea/
 .gitignore
 
 # Unused scripts or logs
