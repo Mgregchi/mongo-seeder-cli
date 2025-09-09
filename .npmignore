@@ -1,0 +1,19 @@
+# Ignore files that are not needed in the npm package
+
+# Dev folders
+test/
+legacy/
+coverage/
+
+# Dotfiles
+.env
+.vscode/
+.gitignore
+
+# Unused scripts or logs
+*.log
+
+# Ignore meta files
+README.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md

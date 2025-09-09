@@ -1,18 +1,35 @@
 {
   "name": "mongo-seeder-cli",
   "version": "1.0.0",
-  "description": "MongoDB seeder CLI tool with recursive folder and verbose options",
+  "description": "MongoDB seeder CLI tool with recursive folder support, clear mode, and verbose logging",
+  "main": "src/index.js",
   "bin": {
-    "seeder": "./seeder.js"
+    "seeder": "./bin/cli.js"
   },
+  "type": "module",
   "scripts": {
-    "start": "node seeder.js"
+    "start": "node bin/cli.js",
+    "test": "vitest"
+  },
+  "keywords": [
+    "mongodb",
+    "seed",
+    "cli",
+    "database",
+    "json",
+    "seeder",
+    "mongo"
+  ],
+  "author": "Michael .A. (Mgregchi)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
   },
   "dependencies": {
     "commander": "^10.0.0",
     "mongodb": "^5.0.0"
   },
-  "engines": {
-    "node": ">=14"
+  "devDependencies": {
+    "vitest": "^1.0.0"
   }
 }

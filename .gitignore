@@ -1,9 +1,11 @@
-.idea
-.vscode
+.idea/
+.vscode/
 package-lock.json
-node_modules
+node_modules/
+.env
+coverage/
 .DS_Store
-dist
+dist/
 # Logs
 logs
 npm-debug.log*
@@ -11,5 +13,5 @@ npm-debug.log*
 jspm_packages
 # Optional npm cache directory
 .npm
-# Optional eslint cache
+# Optional eslint cachen
 .eslintcache

@@ -1,54 +1,87 @@
+
+
 # Mongo Seeder CLI
 
-A simple, flexible CLI tool to seed MongoDB databases from JSON files.
+[![npm version](https://badge.fury.io/js/mongo-seeder-cli.svg)](https://www.npmjs.com/package/mongo-seeder-cli)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Node.js CI](https://img.shields.io/github/workflow/status/your-username/mongo-seeder-cli/Node.js%20CI)](https://github.com/your-username/mongo-seeder-cli/actions)
 
-- Recursively loads JSON files from a seeds directory.
-- Uses the JSON file names as collection names.
-- Supports clearing collections before seeding.
-- Configurable MongoDB URI and database name.
-- Verbose logging for better feedback.
+> A simple, flexible CLI tool to seed MongoDB databases from JSON files.
 
-## Installation
+---
 
-Clone the repo and install dependencies:
+## ✨ Features
+
+- 🔁 Recursively loads JSON files from a seeds directory
+- 🗂 Uses file and folder names to build collection names
+- 🧹 Optionally clears collections before inserting
+- ⚙️ Configurable MongoDB URI and database name
+- 📣 Verbose logging
+- ✅ Supports `.env` for config
+
+---
+
+## 📦 Installation
+
+### 1. Clone and Install
 
 ```bash
 git clone https://github.com/mgregchi/mongo-seeder-cli.git
 cd mongo-seeder-cli
 npm install
-````
+```
 
-Optionally link globally to use `seeder` command anywhere:
+### 2. Link Globally (Optional)
 
 ```bash
 npm link
 ```
 
-## Usage
+Now you can run `seeder` from anywhere.
+
+---
+
+## 🚀 Usage
 
 ```bash
 seeder --database-name <dbName> [options]
 ```
 
-### Options
+### CLI Options
 
-| Flag                  | Description                                 | Default                     |
-| --------------------- | ------------------------------------------- | --------------------------- |
-| `-d, --database-name` | **(Required)** Target MongoDB database name | —                           |
-| `-u, --mongo-uri`     | MongoDB connection URI                      | `mongodb://localhost:27017` |
-| `-s, --seeds-dir`     | Seeds directory path                        | `seeds`                     |
-| `-c, --clear`         | Clear collections before inserting          | `false`                     |
-| `-v, --verbose`       | Enable verbose logging                      | `false`                     |
+| Flag                  | Description                          | Default                     |
+| --------------------- | ------------------------------------ | --------------------------- |
+| `-d, --database-name` | **(Required)** MongoDB database name | —                           |
+| `-u, --mongo-uri`     | MongoDB connection URI               | `mongodb://localhost:27017` |
+| `-s, --seeds-dir`     | Path to the seeds directory          | `seeds`                     |
+| `-c, --clear`         | Clear collections before inserting   | `false`                     |
+| `-v, --verbose`       | Enable verbose logging               | `false`                     |
 
-### Example
+---
 
-Seed the `my_project` database with JSON files from `seeds/`, clear collections first and see verbose logs:
+## 📂 Example
+
+Seed the `my_project` database, clear collections, and log verbosely:
 
 ```bash
 seeder --database-name my_project --clear --verbose
 ```
 
-## Seeds folder structure
+---
+
+## 🌱 Seed File Structure
+
+Each `.json` file must contain an **array** of documents.
+
+```json
+[
+  { "name": "Alice" },
+  { "name": "Bob" }
+]
+```
+
+### Example Directory
+
 
 Place your JSON seed files in the `seeds/` folder (or specify a different folder via `--seeds-dir`).
 
@@ -62,78 +95,48 @@ seeds/
      └─ admins.json       → collection: users_admins
 ```
 
-## Requirements
+---
 
-* Node.js v14+
-* MongoDB server accessible via URI
+## ⚙️ Using `.env`
 
-## License
+Create a `.env` file to avoid repeating CLI arguments:
 
-MIT © Michael. A. (Mgregchi)
+```env
+MONGO_URI=mongodb://localhost:27017
+DATABASE_NAME=myapp
+SEEDS_DIR=seeds
+CLEAR=true
+VERBOSE=true
+```
 
-````
+Now run:
+
+```bash
+seeder
+```
 
 ---
 
-# CONTRIBUTING.md
+## 🧪 Running Tests
 
-```markdown
-# Contributing to Mongo Seeder CLI
-
-Thank you for considering contributing to this project!  
-
-We welcome bug reports, feature requests, and code contributions.
-
-## Getting Started
-
-1. **Fork** the repo and clone it locally.
-
-2. Install dependencies:
+Install test dependencies:
 
 ```bash
 npm install
-````
-
-3. Make your changes in a feature branch.
-
-4. Run the seeder locally for testing:
-
-```bash
-node seeder.js --database-name testdb --seeds-dir seeds --verbose
+npm test
 ```
 
-5. Write clear commit messages.
-
-6. Submit a pull request with a description of your changes.
+Uses [Vitest](https://vitest.dev/)
 
 ---
 
-## Guidelines
+## 📋 Requirements
 
-* Follow existing code style.
-* Write meaningful commit messages.
-* Add tests for new features if possible.
-* Keep the CLI interface consistent.
-* Update documentation if you change behavior or add options.
+* Node.js v14 or newer
+* A running MongoDB instance (local or cloud)
 
 ---
 
-## Reporting Issues
+## 📄 License
 
-Please use GitHub Issues to report bugs or request features.
-Provide detailed steps to reproduce and expected behavior.
-
----
-
-## License
-
-By contributing, you agree your contributions will be licensed under the MIT License.
-
----
-
-Thank you for helping improve Mongo Seeder CLI!
-
-```
-
----
-
+MIT © [Michael. A. (Mgregchi)](https://github.com/mgregchi)

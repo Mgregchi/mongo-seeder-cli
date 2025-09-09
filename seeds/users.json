@@ -1,0 +1,10 @@
+[
+  {
+    "email": "example.user1@example.com",
+    "displayName": "mongo seeder"
+  },
+  {
+    "email": "example.user2@example.com",
+    "displayName": "mongo seeder cli"
+  }
+]
