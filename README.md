@@ -42,10 +42,10 @@ seeder --database-name <dbName> [options]
 
 ### Example
 
-Seed the `idey_link` database with JSON files from `seeds/`, clear collections first and see verbose logs:
+Seed the `my_project` database with JSON files from `seeds/`, clear collections first and see verbose logs:
 
 ```bash
-seeder --database-name idey_link --clear --verbose
+seeder --database-name my_project --clear --verbose
 ```
 
 ## Seeds folder structure
@@ -69,7 +69,7 @@ seeds/
 
 ## License
 
-MIT © Your Name
+MIT © Michael. A. (Mgregchi)
 
 ````
 
